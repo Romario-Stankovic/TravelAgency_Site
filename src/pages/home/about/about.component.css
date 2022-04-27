@@ -1,0 +1,19 @@
+h1 {
+    padding-top: 1rem;
+    text-align: center;
+    color: white;
+}
+
+hr {
+    background-color: #ffffff;
+}
+
+p {
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section {
+    background-color: var(--primary);
+}

@@ -1,0 +1,21 @@
+form {
+    margin-top: 1rem;
+}
+
+mat-form-field {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+}
+
+mat-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

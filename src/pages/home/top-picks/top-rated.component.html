@@ -1,0 +1,11 @@
+<h1>OUR TOP RATED DESTINATIONS</h1>
+<hr>
+
+<div class="destinations" *ngIf="destinations.length > 0">
+    <dest-card *ngFor="let destination of destinations" [data]="destination"></dest-card>
+</div>
+
+<div class="loader" *ngIf="destinations.length === 0">
+    <p *ngIf="loading === false">Failed to load top rated destinations!</p>
+    <mat-spinner *ngIf="loading === true" diameter="50"></mat-spinner>
+</div>

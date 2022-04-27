@@ -1,0 +1,20 @@
+<h1>FREQUENTLY ASKED QUESTIONS</h1>
+<hr>
+<br>
+<div class="faq" *ngIf="faq.length > 0">
+    <mat-accordion multi="true">
+        <mat-expansion-panel *ngFor="let question of faq">
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{question.title}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p><b>Q: </b>{{question.question}}</p>
+            <br>
+            <p><b>A: </b> {{question.answer}}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<div class="loader" *ngIf="faq.length === 0">
+    <p *ngIf="loading === false">Failed to load frequently asked questions!</p>
+    <mat-spinner *ngIf="loading===true" diameter="50"></mat-spinner>
+</div>

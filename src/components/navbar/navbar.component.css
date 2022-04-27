@@ -1,0 +1,59 @@
+.bar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+}
+
+.bar span {
+    display: flex;
+    flex-grow: 1;
+}
+
+button {
+    margin: 3px;
+}
+
+.block {
+    position: static;
+    visibility: hidden;
+}
+
+.mobile {
+    display: none;
+    width: 100%;
+}
+.desktop {
+    display: flex;
+    width: 100%;
+}
+
+mat-sidenav-container {
+    display: none;
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.test {
+    z-index: 3;
+}
+
+@media screen and (max-width: 600px) {
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+    mat-sidenav-container {
+        display: block;
+    }
+}
