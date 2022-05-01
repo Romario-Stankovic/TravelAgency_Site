@@ -8,6 +8,11 @@ export class DestinationService {
     constructor(private http: HttpClient){}
 
     getTopRated(){
-        return this.http.get<ApiDestination[]>(environment.apiUrl + "/dest/topRated");
+        return this.http.get<ApiDestination[]>(environment.apiUrl + "/destination/topRated");
     }
+
+    getByID(id: string) {
+        return this.http.get<ApiDestination>(environment.apiUrl + "/destination?id=" + id);
+    }
+
 }

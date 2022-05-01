@@ -10,8 +10,13 @@ hr {
 
 p {
     color: white;
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
+    font-size: 1rem;
+    width: 80vw;
+    max-width: 1000px;
+    text-align: justify;
+    padding-bottom: 1rem;
 }
 
 .section {

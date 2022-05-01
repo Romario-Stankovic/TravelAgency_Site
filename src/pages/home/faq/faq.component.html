@@ -5,11 +5,11 @@
     <mat-accordion multi="true">
         <mat-expansion-panel *ngFor="let question of faq">
             <mat-expansion-panel-header>
-                <mat-panel-title>{{question.title}}</mat-panel-title>
+                <mat-panel-title>
+                    <b>Question: </b> {{question.question}}
+                </mat-panel-title>
             </mat-expansion-panel-header>
-            <p><b>Q: </b>{{question.question}}</p>
-            <br>
-            <p><b>A: </b> {{question.answer}}</p>
+            <b>Answer: </b> {{question.answer}}
         </mat-expansion-panel>
     </mat-accordion>
 </div>

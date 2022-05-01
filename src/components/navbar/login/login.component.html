@@ -17,6 +17,8 @@
             </mat-form-field>
             <br>
             <button mat-raised-button color="primary">Login</button>
+            <mat-error class="actionError" *ngIf="invalidEmail">No user with that email</mat-error>
+            <mat-error class="actionError" *ngIf="invalidPassword">Wrong password</mat-error>
         </form>
     </mat-tab>
     <mat-tab label="Register">
@@ -57,6 +59,7 @@
 
             <br>
             <button mat-raised-button color="primary">Register</button>
+            <mat-error class="actionError" *ngIf="userExists">User with this email already exists</mat-error>
         </form>
     </mat-tab>
 </mat-tab-group>

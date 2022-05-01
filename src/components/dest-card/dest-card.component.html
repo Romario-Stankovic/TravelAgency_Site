@@ -1,6 +1,6 @@
 <mat-card>
     <img src={{data?.imageUrl}}>
     <h1>{{data?.name}}</h1>
-    <score [score]="data.score"></score>
-    <button mat-flat-button color="primary">View Destination</button>
+    <score [score]="data?.score" [ratings]="data?.ratings"></score>
+    <button mat-flat-button color="primary" (click)="viewDestination();">View Destination</button>
 </mat-card>

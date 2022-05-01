@@ -8,12 +8,12 @@ import { ApiMotd } from "src/models/motd.model";
 export class GeneralService {
     constructor(private http: HttpClient) {}
 
-    getMotd(){
-        return this.http.get<ApiMotd>(environment.apiUrl + "/welcomeMessage");
+    getRandomMotd(){
+        return this.http.get<ApiMotd>(environment.apiUrl + "/motd/random");
     }
 
     getFaq(){
-        return this.http.get<ApiFaq[]>(environment.apiUrl + "/faq");
+        return this.http.get<ApiFaq[]>(environment.apiUrl + "/faq/all");
     }
 
 }

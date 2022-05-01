@@ -10,6 +10,8 @@ import { HomeModule } from 'src/pages/home/home.module';
 import { DiscoveryModule } from 'src/pages/discovery/discovery.module';
 import { DestinationService } from 'src/services/destination.service';
 import { GeneralService } from 'src/services/general.service';
+import { UserService } from 'src/services/user.service';
+import { DestinationModule } from 'src/pages/destination/destination.module';
 
 @NgModule({
     declarations: [
@@ -21,9 +23,10 @@ import { GeneralService } from 'src/services/general.service';
         BrowserAnimationsModule,
         AppRoutingModule,
         HomeModule,
-        DiscoveryModule
+        DiscoveryModule,
+        DestinationModule
     ],
-    providers: [GeneralService, DestinationService],
+    providers: [GeneralService, DestinationService, UserService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

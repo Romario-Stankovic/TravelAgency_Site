@@ -16,7 +16,7 @@ import { ScoreComponent } from "./score/score.component";
             MatCardModule,
             CommonModule,
             MatIconModule,
-            MatButtonModule
+            MatButtonModule,
         ],
         providers: [],
         exports: [DestCardComponent, ScoreComponent]

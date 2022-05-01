@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiDestination } from 'src/models/destination.model';
 
 @Component({
@@ -9,12 +10,14 @@ import { ApiDestination } from 'src/models/destination.model';
 export class DestCardComponent {
 
     @Input()
-    data : ApiDestination = {
-        name: "${destination}",
-        description: "${description}",
-        imageUrl: "${imageUrl}",
-        score: 0,
-        reviews: 0
-    };
+    data? : ApiDestination;
+
+    constructor(
+        private router : Router
+    ){}
+
+    viewDestination(){
+        this.router.navigateByUrl(`destination?id=${this.data?._id}`);
+    }
 
 }

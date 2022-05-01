@@ -1,6 +1,8 @@
 import { Component, HostListener, Input } from "@angular/core";
 
 import { MatDialog, MAT_DIALOG_DEFAULT_OPTIONS } from "@angular/material/dialog";
+import { UserService } from "src/services/user.service";
+import { EditSelfComponent } from "./edit-self/edit-self.component";
 import { LoginComponent } from "./login/login.component";
 
 @Component(
@@ -15,16 +17,12 @@ export class NavbarComponent {
     @Input()
     overlap : boolean = false;
 
-    sidenavOpen = false;
-
-    constructor(public dialog: MatDialog) { }
-
-    openSideNav(){
-        this.sidenavOpen = true;
-    }
+    constructor(
+        public dialog: MatDialog,
+        public userService : UserService) { }
 
     showLoginDialog() {
-        let dialogRef = this.dialog.open(LoginComponent, {
+        this.dialog.open(LoginComponent, {
             data: {
                 selectedTab: 0
             },
@@ -33,12 +31,22 @@ export class NavbarComponent {
     }
 
     showRegisterDialog() {
-        let dialogRef = this.dialog.open(LoginComponent, {
+        this.dialog.open(LoginComponent, {
             data: {
                 selectedTab: 1
             },
             panelClass: "loginDialog"
         });
+    }
+
+    showEditDialog() {
+        this.dialog.open(EditSelfComponent, {
+            panelClass: "loginDialog"
+        });
+    }
+
+    logout(){
+        this.userService.logout();
     }
 
 }

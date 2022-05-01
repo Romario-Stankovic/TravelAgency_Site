@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit{
         ){}
     ngOnInit(): void {
         
-        this.generalService.getMotd().subscribe(data => {
+        this.generalService.getRandomMotd().subscribe(data => {
             this.motd = data.message;
         });
 

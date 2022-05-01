@@ -23,4 +23,5 @@ hr {
 .loginDialog mat-dialog-container {
     overflow: hidden;
     position: relative;
+    min-width: 350px;
 }

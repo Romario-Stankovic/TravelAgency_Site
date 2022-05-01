@@ -13,12 +13,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatMenuModule} from '@angular/material/menu';
+import { EditSelfComponent } from './edit-self/edit-self.component';
 
 @NgModule({
     declarations: [
         NavbarComponent,
-        LoginComponent
+        LoginComponent,
+        EditSelfComponent
     ],
     imports: [
         CommonModule,
@@ -32,7 +35,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
         MatProgressBarModule,
         MatIconModule,
         RouterModule,
-        MatSidenavModule
+        MatSnackBarModule,
+        MatMenuModule
     ],
     providers: [],
     exports: [NavbarComponent]

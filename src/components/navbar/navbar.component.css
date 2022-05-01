@@ -1,14 +1,14 @@
 .bar {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 10;
     background-color: rgba(255, 255, 255, 0.85);
     border: 2px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
 }
 
-.bar span {
+span {
     display: flex;
     flex-grow: 1;
 }
@@ -26,34 +26,38 @@ button {
     display: none;
     width: 100%;
 }
+
 .desktop {
     display: flex;
     width: 100%;
 }
 
-mat-sidenav-container {
-    display: none;
-    z-index: 0;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0);
+.emailInfo {
+    opacity: 0.5;
+    margin: auto 1rem;
 }
 
-.test {
-    z-index: 3;
+::ng-deep .userMenu p{
+    text-align: center;
 }
 
-@media screen and (max-width: 600px) {
+::ng-deep .userMenu button {
+    display: block;
+    width: 90%; 
+    margin: 0.5rem auto 0 auto;
+}
+
+::ng-deep .navMenu button {
+    display:block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px /* 2000px */) {
     .mobile {
-        display: block;
+        display: flex;
     }
     .desktop {
         display: none;
-    }
-    mat-sidenav-container {
-        display: block;
     }
 }

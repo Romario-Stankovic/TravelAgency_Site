@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-content>
+        <img [src]="data?.imageUrl">
+        <div class="info">
+            <h1>{{data?.name}}</h1>
+            <score [score]="data?.score" [ratings]="data?.ratings"></score>
+            <p class="description">{{data?.description}}</p>
+        </div>
+        <button mat-flat-button color="primary">Book Now</button>
+    </mat-card-content>
+</mat-card>
