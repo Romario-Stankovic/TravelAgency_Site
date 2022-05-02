@@ -2,5 +2,5 @@
     <mat-icon color="accent" *ngFor="let sc of [1,2,3,4,5]">
         {{this.score != undefined ? (sc <= this.score ? 'star' : sc > this.score && sc -1 < this.score ? 'star_half' : 'star_border') : 'star_border'}}
     </mat-icon>
-    <p>{{ratings}} reviews</p>
+    <p *ngIf="drawCount">{{ratings}} reviews</p>
 </div>

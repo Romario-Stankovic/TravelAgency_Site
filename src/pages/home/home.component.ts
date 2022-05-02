@@ -26,9 +26,13 @@ export class HomeComponent implements OnInit{
         });
 
         this.destinationService.getTopRated().subscribe(data => {
-            this.topRated = data;
-            for(let destination of this.topRated){
-                destination.imageUrl = environment.apiUrl + "/" + destination.imageUrl;
+            if("statusCode" in data){
+                this.topRated = [];
+            }else{
+                this.topRated = data;
+                for(let destination of this.topRated){
+                    destination.imageUrl = environment.apiUrl + "/" + destination.imageUrl;
+                }
             }
         });
 

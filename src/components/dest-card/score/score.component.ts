@@ -10,5 +10,7 @@ export class ScoreComponent {
     score? = 0;
     @Input()
     ratings? = 0;
+    @Input()
+    drawCount = true;
 
 }
