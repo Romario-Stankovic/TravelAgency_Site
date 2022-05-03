@@ -1,5 +1,7 @@
 <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
 
+<h1>Edit Profile</h1>
+
 <form [formGroup]="editForm" (ngSubmit)="edit();">
     <mat-form-field>
         <mat-label>Name:</mat-label>
@@ -19,15 +21,6 @@
         <mat-error>Email must be valid</mat-error>
     </mat-form-field>
 
-    <mat-form-field>
-        <mat-label>Password:</mat-label>
-        <input matInput [type]="showEditPassword ? 'text' : 'password' " formControlName="password">
-        <button tabindex="-1" mat-icon-button matSuffix
-            (click)="showEditPassword = !showEditPassword; $event.preventDefault();">
-            <mat-icon>{{showEditPassword? 'visibility' : 'visibility_off'}}</mat-icon>
-        </button>
-        <mat-error>Passwords must be at least 8 characters long</mat-error>
-    </mat-form-field>
     <br>
     <button mat-raised-button color="primary">Update</button>
     <mat-error class="actionError" *ngIf="userExists">This email is taken!</mat-error>

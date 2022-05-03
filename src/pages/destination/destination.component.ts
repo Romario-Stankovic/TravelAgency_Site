@@ -20,7 +20,7 @@ export class DestinationComponent implements OnInit {
     constructor(
         private destinationService: DestinationService,
         private route : ActivatedRoute,
-        private router : Router
+        private router : Router,
     ) { }
 
     ngOnInit(): void {

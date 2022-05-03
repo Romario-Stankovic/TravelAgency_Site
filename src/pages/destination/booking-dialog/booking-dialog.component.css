@@ -1,27 +1,27 @@
-form {
-    margin-top: 1rem;
-}
-
 h1 {
     text-align: center;
+}
+
+form {
+    margin-top: 1rem;
 }
 
 mat-form-field {
     display: block;
     width: 75%;
-    margin: 0 auto;
-}
-
-button {
-    display: block;
-    margin: 0 auto;
-    width: 75%;
+    margin: 1rem auto;
 }
 
 mat-progress-bar {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
 }
 
 .actionError {

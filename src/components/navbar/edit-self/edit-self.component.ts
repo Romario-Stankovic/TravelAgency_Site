@@ -21,7 +21,6 @@ export class EditSelfComponent {
             name: new FormControl("", [Validators.required, Validators.minLength(1)]),
             lastName: new FormControl("", [Validators.required, Validators.minLength(1)]),
             email: new FormControl("", [Validators.required, Validators.email]),
-            password: new FormControl("", [Validators.required, Validators.minLength(8)]),
         }
     )
 
@@ -40,7 +39,7 @@ export class EditSelfComponent {
         let id = this.userService.loggedInUser?._id;
         this.loading = true;
         if(id != undefined){
-            this.userService.edit(id, data.name, data.lastName, data.email, data.password).subscribe(data => {
+            this.userService.edit(id, data.name, data.lastName, data.email).subscribe(data => {
                 if("statusCode" in data){
                     switch(data.statusCode){
                         case 1003:

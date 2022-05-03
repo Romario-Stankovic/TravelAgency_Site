@@ -20,7 +20,7 @@ hr {
     background-color: var(--primary);
 }
 
-.loginDialog mat-dialog-container {
+.dialog mat-dialog-container {
     overflow: hidden;
     position: relative;
     min-width: 350px;

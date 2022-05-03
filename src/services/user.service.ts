@@ -32,12 +32,11 @@ export class UserService {
         });
     }
 
-    edit(id: string, name: string, lastName: string, email: string, password: string) {
+    edit(id: string, name: string, lastName: string, email: string) {
         return this.http.put<ApiUser | ApiResponse>(environment.apiUrl + "/user/?id=" + id, {
             name: name,
             lastName: lastName,
-            email: email,
-            password: password
+            email: email
         });
     }
 

@@ -12,6 +12,7 @@ import { DestinationService } from 'src/services/destination.service';
 import { GeneralService } from 'src/services/general.service';
 import { UserService } from 'src/services/user.service';
 import { DestinationModule } from 'src/pages/destination/destination.module';
+import { BookingService } from 'src/services/booking.service';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,7 @@ import { DestinationModule } from 'src/pages/destination/destination.module';
         DiscoveryModule,
         DestinationModule
     ],
-    providers: [GeneralService, DestinationService, UserService],
+    providers: [GeneralService, DestinationService, UserService, BookingService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

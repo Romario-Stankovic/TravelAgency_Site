@@ -26,7 +26,7 @@ export class NavbarComponent {
             data: {
                 selectedTab: 0
             },
-            panelClass: "loginDialog"
+            panelClass: "dialog"
         });
     }
 
@@ -35,13 +35,13 @@ export class NavbarComponent {
             data: {
                 selectedTab: 1
             },
-            panelClass: "loginDialog"
+            panelClass: "dialog"
         });
     }
 
     showEditDialog() {
         this.dialog.open(EditSelfComponent, {
-            panelClass: "loginDialog"
+            panelClass: "dialog"
         });
     }
 

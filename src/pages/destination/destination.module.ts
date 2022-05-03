@@ -9,9 +9,17 @@ import { FooterModule } from "src/components/footer/footer.module";
 import { NavbarModule } from "src/components/navbar/navbar.module";
 import { DestinationComponent } from "./destination.component";
 import { ProductComponent } from './product/product.component';
+import { BookingDialogComponent } from './booking-dialog/booking-dialog.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatNativeDateModule } from "@angular/material/core";
+import { MatInputModule } from "@angular/material/input";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
-    declarations: [DestinationComponent, ProductComponent],
+    declarations: [DestinationComponent, ProductComponent, BookingDialogComponent],
     imports: [
         CommonModule,
         NavbarModule,
@@ -21,7 +29,15 @@ import { ProductComponent } from './product/product.component';
         DestCardModule,
         MatExpansionModule,
         MatProgressSpinnerModule,
-        DestCardModule
+        MatDatepickerModule,
+        MatFormFieldModule,
+        MatNativeDateModule,
+        MatInputModule,
+        MatProgressBarModule,
+        DestCardModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSnackBarModule
     ],
     providers: [
         
