@@ -22,8 +22,8 @@ export class DiscoveryComponent implements OnInit {
     }
 
     searchSubmit(filter : {value: string}[]){
-        let filters = filter.reduce((result : string[], value) : string[] => {
-            result.push(value.value.toLowerCase());
+        let filters = filter.reduce((result : string[], filter) : string[] => {
+            result.push(filter.value.toLowerCase().trim());
             return result;
         }, []);
         this.getDestinations(filters);

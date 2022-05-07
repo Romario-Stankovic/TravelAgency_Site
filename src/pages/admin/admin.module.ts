@@ -17,6 +17,7 @@ import { FaqDialogComponent } from "./faq-panel/faq-dialog/faq-dialog.component"
 import { UserDialogComponent } from './user-panel/user-dialog/user-dialog.component';
 import { DestinationDialogComponent } from './destination-panel/destination-dialog/destination-dialog.component';
 import { MatChipsModule } from "@angular/material/chips";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
     declarations: [AdminComponent, UserPanelComponent, DestinationPanelComponent, FaqPanelComponent, MotdPanelComponent, MotdDialogComponent, FaqDialogComponent, UserDialogComponent, DestinationDialogComponent],
@@ -31,7 +32,8 @@ import { MatChipsModule } from "@angular/material/chips";
         MatInputModule,
         FormsModule,
         ReactiveFormsModule,
-        MatChipsModule
+        MatChipsModule,
+        MatSnackBarModule
     ],
     exports: [AdminComponent]
 })

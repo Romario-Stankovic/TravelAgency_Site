@@ -11,12 +11,12 @@ export class BookingService {
         private http: HttpClient
     ){}
 
-    create(userId : string, destinationId : string, date: Date, days: number){
+    create(userId : string, destinationId : string, start: Date, end: Date){
         return this.http.post<ApiBooking | ApiResponse>(environment.apiUrl + "/booking/", {
                 userId: userId,
                 destinationId: destinationId,
-                date: date,
-                days: days
+                start: start,
+                end: end
             }
         );
     }

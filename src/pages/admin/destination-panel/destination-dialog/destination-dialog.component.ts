@@ -100,7 +100,7 @@ export class DestinationDialogComponent implements OnInit {
     }
 
     addChip(event: MatChipInputEvent) {
-        let value = (event.value || "").trim();
+        let value = (event.value || "").trim().toLowerCase();
 
         if (value) {
             this.categories.push({ value: value });

@@ -15,7 +15,7 @@ export class BookingDialogComponent {
     loading = false;
 
     min = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7).toISOString();
-
+    max? : string = undefined;
     constructor(
         private bookingService: BookingService,
         private userService: UserService,
@@ -25,9 +25,13 @@ export class BookingDialogComponent {
     ) { }
 
     bookingForm = new FormGroup({
-        date: new FormControl("", [Validators.required]),
-        days: new FormControl("", [Validators.required, Validators.min(1), Validators.max(14), Validators.pattern(/^[0-9]+$/)])
+        startDate: new FormControl("", [Validators.required]),
+        endDate: new FormControl("", [Validators.required])
     });
+
+    setStartDate(start : HTMLInputElement){
+        this.max = new Date((new Date(start.value).getTime()  + 1000 * 60 * 60 * 24 * 13)).toISOString();
+    }
 
     createBooking() {
         if (!this.bookingForm.valid) {
@@ -36,7 +40,7 @@ export class BookingDialogComponent {
         let formData = this.bookingForm.value;
         this.loading = true;
         let userId = this.userService.loggedInUser?._id;
-        this.bookingService.create(userId != undefined ? userId : "", this.data.destinationId, formData.date, formData.days).subscribe(response => {
+        this.bookingService.create(userId != undefined ? userId : "", this.data.destinationId, formData.startDate, formData.endDate).subscribe(response => {
             this.loading = false;
             if ("statusCode" in response) {
                 this.snackBar.open("Failed to make a reservation", "OK");
