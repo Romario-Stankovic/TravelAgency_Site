@@ -19,7 +19,10 @@ export class ProductComponent {
 
     showDialog() {
         this.dialog.open(BookingDialogComponent, {
-            panelClass: "dialog"
+            panelClass: "dialog",
+            data: {
+                destinationId: this.data?._id
+            }
         });
     }
 

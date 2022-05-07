@@ -1,0 +1,17 @@
+<h1>USERS</h1>
+<hr>
+<br>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let user of users">
+        <mat-expansion-panel-header>
+            {{user.name}} {{user.lastName}}
+        </mat-expansion-panel-header>
+        <b>Name: </b> {{user.name}} <br>
+        <b>Last name: </b> {{user.lastName}} <br>
+        <b>E-mail: </b> {{user.email}} <br>
+        <mat-action-row>
+            <button mat-flat-button color="primary" (click)="showUserDialog(user)">Edit</button>
+            <button mat-flat-button color="warn" (click)="delete(user)">Delete</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>

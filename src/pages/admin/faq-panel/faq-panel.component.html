@@ -1,0 +1,16 @@
+<h1>FAQS</h1>
+<hr>
+<button mat-flat-button color="primary" class="addButton" (click)="showFaqDialog(undefined);">Create</button>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let faq of faqs">
+        <mat-expansion-panel-header>
+            {{faq.question}}
+        </mat-expansion-panel-header>
+        <b>Question: </b> {{faq.question}} <br>
+        <b>Answer: </b> {{faq.answer}}
+        <mat-action-row>
+            <button mat-flat-button color="primary" (click)="showFaqDialog(faq);">Edit</button>
+            <button mat-flat-button color="warn" (click)="delete(faq);">Delete</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>

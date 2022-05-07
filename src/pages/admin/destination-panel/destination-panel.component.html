@@ -1,0 +1,18 @@
+<h1>DESTINATIONS</h1>
+<hr>
+<button mat-flat-button color="primary" class="addButton">Create</button>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let destination of data">
+        <mat-expansion-panel-header>
+            {{destination.name}}
+        </mat-expansion-panel-header>
+        <img [src]="destination.imageUrl"> <br>
+        <b>Name: </b> {{destination.name}} <br>
+        <b>Description: </b> {{destination.description}} <br>
+        <!-- <b>Categories: </b> {{destination.categories}} <br> -->
+        <mat-action-row>
+            <button mat-flat-button color="primary">Edit</button>
+            <button mat-flat-button color="warn">Delete</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>

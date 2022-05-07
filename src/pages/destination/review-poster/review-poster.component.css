@@ -1,0 +1,14 @@
+mat-card h2 {
+    text-align: center;
+}
+
+mat-form-field {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+mat-card-actions {
+    width: 90%;
+    margin: 0 auto;
+}

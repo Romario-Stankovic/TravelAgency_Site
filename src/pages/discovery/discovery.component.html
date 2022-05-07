@@ -1,2 +1,13 @@
 <navbar></navbar>
+<search (searchFilters)="searchSubmit($event);"></search>
+<h1>SEARCH RESULTS</h1>
+<hr>
+<div class="destinations" *ngIf="destinations.length > 0">
+    <dest-card *ngFor="let destination of destinations" [data]="destination"></dest-card>
+</div>
+
+<div class="loader" *ngIf="destinations.length === 0">
+    <p *ngIf="loading === false">No destinations matching this query</p>
+    <mat-spinner *ngIf="loading === true" diameter="50"></mat-spinner>
+</div>
 <footer></footer>

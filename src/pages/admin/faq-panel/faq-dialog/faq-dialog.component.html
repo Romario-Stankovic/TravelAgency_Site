@@ -1,0 +1,14 @@
+<h1>FAQS</h1>
+<hr>
+<br>
+<form [formGroup]="faqForm">
+    <mat-form-field>
+        <mat-label>Question: </mat-label>
+        <input matInput formControlName="question">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Answer: </mat-label>
+        <textarea rows="5" matInput formControlName="answer"></textarea>
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="data == undefined ? create() : update()">{{data != undefined ? "Update" : "Create"}}</button>
+</form>

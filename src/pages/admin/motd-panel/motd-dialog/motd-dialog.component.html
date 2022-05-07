@@ -1,0 +1,10 @@
+<h1>MOTD</h1>
+<hr>
+<br>
+<form [formGroup]="motdForm">
+    <mat-form-field>
+        <mat-label>Message: </mat-label>
+        <input matInput formControlName="message">
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="data == undefined ? create() : update()">{{data != undefined ? "Update" : "Create"}}</button>
+</form>

@@ -1,7 +1,7 @@
 <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
 
 <h1>Create Booking</h1>
-<form [formGroup]="bookingGroup">
+<form [formGroup]="bookingForm">
     <mat-form-field>
         <mat-label>Date:</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="date" [min]="min">

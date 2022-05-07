@@ -1,0 +1,19 @@
+<div class="search">
+    <mat-form-field appearance="outline">
+        <mat-chip-list #chipList>
+            <mat-chip *ngFor="let filter of filters" (removed)="remove(filter)">
+                {{filter.value}}
+                <button matChipRemove><mat-icon>cancel</mat-icon></button>
+            </mat-chip>
+            
+            <input placeholder="Search" 
+            [matChipInputFor]="chipList" 
+            [matChipInputSeparatorKeyCodes]="separatorKeyCodes" 
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event)"
+            (keyup.enter)="search();"
+            >
+        </mat-chip-list>
+        <button mat-icon-button matSuffix (click)="search();"><mat-icon>search</mat-icon></button>
+    </mat-form-field>
+</div>

@@ -3,6 +3,7 @@
 <h1 class="sectionTitle">REVIEWS</h1>
 <hr>
 <br>
+<review-poster class="reviewPanel" (refreshReviews)="loadData();"></review-poster>
 <div class="reviews" *ngIf="reviews.length > 0">
     <mat-accordion multi="true">
         <mat-expansion-panel *ngFor="let review of reviews">

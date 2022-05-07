@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiDestination } from 'src/models/destination.model';
 import { ApiReview } from 'src/models/review.model';
@@ -17,6 +17,8 @@ export class DestinationComponent implements OnInit {
 
     loading = false;
 
+    params !: Params;
+
     constructor(
         private destinationService: DestinationService,
         private route : ActivatedRoute,
@@ -25,23 +27,28 @@ export class DestinationComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.queryParams.subscribe(params => {
-            this.destinationService.getByID(params["id"]).subscribe(data => {
-                if("statusCode" in data){
-                    this.router.navigateByUrl("/");
-                }else{
-                    data.imageUrl = environment.apiUrl + "/" + data.imageUrl;
-                    this.data = data;
-                }
-            });
-            this.loading = true;
-            this.destinationService.getReviews(params["id"]).subscribe(data => {
-                if("statusCode" in data){
-                    this.reviews = [];
-                }else{
-                    this.reviews = data;
-                }
-                this.loading = false;
-            })
+            this.params = params;
+        });
+        this.loadData();
+    }
+
+    loadData() {
+        this.destinationService.getByID(this.params["id"]).subscribe(data => {
+            if ("statusCode" in data) {
+                this.router.navigateByUrl("/");
+            } else {
+                data.imageUrl = environment.apiUrl + "/" + data.imageUrl;
+                this.data = data;
+            }
+        });
+        this.loading = true;
+        this.destinationService.getReviews(this.params["id"]).subscribe(data => {
+            if ("statusCode" in data) {
+                this.reviews = [];
+            } else {
+                this.reviews = data;
+            }
+            this.loading = false;
         });
     }
 

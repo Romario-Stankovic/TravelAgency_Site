@@ -3,7 +3,8 @@ import { environment } from 'src/environments/environment';
 import { ApiDestination } from 'src/models/destination.model';
 import { ApiFaq } from 'src/models/faq.model';
 import { DestinationService } from 'src/services/destination.service';
-import { GeneralService } from 'src/services/general.service';
+import { FaqService } from 'src/services/faq.service';
+import { MotdService } from 'src/services/motd.service';
 
 @Component({
   selector: 'app-home',
@@ -16,13 +17,18 @@ export class HomeComponent implements OnInit{
     faq : ApiFaq[] = [];
 
     constructor(
-        private generalService : GeneralService,
-        private destinationService : DestinationService
+        private motdService : MotdService,
+        private destinationService : DestinationService,
+        private faqService : FaqService
         ){}
     ngOnInit(): void {
-        
-        this.generalService.getRandomMotd().subscribe(data => {
-            this.motd = data.message;
+
+        this.motdService.getRandomMotd().subscribe(data => {
+            if("statusCode" in data){
+                this.motd = "Failed to load motd";
+            }else{
+                this.motd = data.message;
+            }
         });
 
         this.destinationService.getTopRated().subscribe(data => {
@@ -36,8 +42,14 @@ export class HomeComponent implements OnInit{
             }
         });
 
-        this.generalService.getFaq().subscribe(data => {
-            this.faq = data;
+        this.faqService.getAllFaq().subscribe(data => {
+            
+            if("statusCode" in data){
+                this.faq = [];
+            }else{
+                this.faq = data;
+            }
+
         });
 
     }

@@ -17,9 +17,11 @@ import { MatInputModule } from "@angular/material/input";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { ReviewPosterComponent } from './review-poster/review-poster.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
-    declarations: [DestinationComponent, ProductComponent, BookingDialogComponent],
+    declarations: [DestinationComponent, ProductComponent, BookingDialogComponent, ReviewPosterComponent],
     imports: [
         CommonModule,
         NavbarModule,
@@ -37,7 +39,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
         DestCardModule,
         FormsModule,
         ReactiveFormsModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatSelectModule
     ],
     providers: [
         

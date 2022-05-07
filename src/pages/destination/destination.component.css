@@ -27,3 +27,10 @@ mat-expansion-panel-header b{
 .score {
     margin-left: 0.5rem;
 }
+
+.reviewPanel {
+    display: block;
+    margin: 2rem auto;
+    max-width: 600px;
+    width: 80vw;
+}

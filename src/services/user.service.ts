@@ -23,6 +23,10 @@ export class UserService {
         return this.http.get<ApiUser | ApiResponse>(environment.apiUrl + "/user/?id=" + id);
     }
 
+    getAllUsers(){
+        return this.http.get<ApiUser[] | ApiResponse>(environment.apiUrl + "/user/all");
+    }
+
     register(name: string, lastName: string, email: string, password: string) {
         return this.http.post<ApiUser | ApiResponse>(environment.apiUrl + "/user/", {
             name: name,
@@ -32,12 +36,17 @@ export class UserService {
         });
     }
 
-    edit(id: string, name: string, lastName: string, email: string) {
+    update(id: string, name: string, lastName: string, email: string, password? : string) {
         return this.http.put<ApiUser | ApiResponse>(environment.apiUrl + "/user/?id=" + id, {
             name: name,
             lastName: lastName,
-            email: email
+            email: email,
+            password: password
         });
+    }
+
+    delete(id: string){
+        return this.http.delete<ApiUser | ApiResponse>(environment.apiUrl + "/user/?id=" + id);
     }
 
     login(email: string, password: string) {

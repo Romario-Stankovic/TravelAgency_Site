@@ -1,0 +1,15 @@
+<h1>MOTDS</h1>
+<hr>
+<button mat-flat-button color="primary" class="addButton" (click)="showMotdDialog(undefined);">Create</button>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let motd of motds">
+        <mat-expansion-panel-header>
+            {{motd.message}}
+        </mat-expansion-panel-header>
+        <b>Message: </b> {{motd.message}}
+        <mat-action-row>
+            <button mat-flat-button color="primary" (click)="showMotdDialog(motd)">Edit</button>
+            <button mat-flat-button color="warn" (click)="deleteMotd(motd)">Delete</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>

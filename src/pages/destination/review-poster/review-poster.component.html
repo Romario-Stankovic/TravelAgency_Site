@@ -1,0 +1,19 @@
+<mat-card>
+    <h2>Post a review</h2>
+    <form [formGroup]="reviewForm">
+        <mat-form-field>
+            <mat-label>Score: </mat-label>
+            <mat-select formControlName="score">
+                <mat-option *ngFor="let score of [1,2,3,4,5]" [value]="score">{{score}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Write something</mat-label>
+            <textarea matInput rows="3" formControlName="text"></textarea>
+        </mat-form-field>
+    </form>
+    <mat-card-actions align="end">
+        <button mat-flat-button color="primary" (click)="postReview();">Post</button>
+    </mat-card-actions>
+</mat-card>

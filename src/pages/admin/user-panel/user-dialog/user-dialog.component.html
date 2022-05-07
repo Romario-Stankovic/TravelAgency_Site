@@ -1,0 +1,22 @@
+<h1>USER</h1>
+<hr>
+<br>
+<form [formGroup]="userForm">
+    <mat-form-field>
+        <mat-label>Name: </mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Last name: </mat-label>
+        <input matInput formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email: </mat-label>
+        <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password: </mat-label>
+        <input matInput formControlName="password">
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="update()">Update</button>
+</form>
