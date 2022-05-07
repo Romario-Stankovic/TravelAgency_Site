@@ -5,6 +5,7 @@ h1 {
 mat-expansion-panel {
     width: 75%;
     margin: 5px auto;
+    min-width: 275px;
 }
 
 mat-expansion-panel img{
