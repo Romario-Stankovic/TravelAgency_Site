@@ -11,7 +11,7 @@ export class UserService {
     constructor(private http: HttpClient) {
         let id = localStorage.getItem("userID");
         if (id != null) {
-            this.getUserByID(id).subscribe(data => {
+            this.getById(id).subscribe(data => {
                 if ("_id" in data) {
                     this.loggedInUser = data;
                 }
@@ -19,11 +19,11 @@ export class UserService {
         }
     }
 
-    getUserByID(id: string) {
+    getById(id: string) {
         return this.http.get<ApiUser | ApiResponse>(environment.apiUrl + "/user/?id=" + id);
     }
 
-    getAllUsers(){
+    getAll(){
         return this.http.get<ApiUser[] | ApiResponse>(environment.apiUrl + "/user/all");
     }
 

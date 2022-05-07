@@ -11,7 +11,7 @@ export class BookingService {
         private http: HttpClient
     ){}
 
-    createBooking(userId : string, destinationId : string, date: Date, days: number){
+    create(userId : string, destinationId : string, date: Date, days: number){
         return this.http.post<ApiBooking | ApiResponse>(environment.apiUrl + "/booking/", {
                 userId: userId,
                 destinationId: destinationId,

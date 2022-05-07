@@ -32,7 +32,7 @@ export class FaqDialogComponent implements OnInit {
     }
 
     create() {
-        this.faqService.createFaq(this.faqForm.value.question, this.faqForm.value.answer).subscribe(data => {
+        this.faqService.create(this.faqForm.value.question, this.faqForm.value.answer).subscribe(data => {
             if("statusCode" in data) {
                 this.snackBar.open("Creation failed", "OK!");
             }else{
@@ -43,7 +43,7 @@ export class FaqDialogComponent implements OnInit {
     }
 
     update() {
-        this.faqService.updateFaq(this.data._id, this.faqForm.value.question, this.faqForm.value.answer).subscribe(data => {
+        this.faqService.update(this.data._id, this.faqForm.value.question, this.faqForm.value.answer).subscribe(data => {
             if("statusCode" in data) {
                 this.snackBar.open("Update failed", "OK!");
             }else{

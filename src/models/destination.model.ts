@@ -1,8 +1,9 @@
 export interface ApiDestination {
-    _id: number,
+    _id: string,
     name: string,
     description: string,
     imageUrl: string,
     score: number,
-    ratings: number;
+    ratings: number,
+    categories : string[]
 }

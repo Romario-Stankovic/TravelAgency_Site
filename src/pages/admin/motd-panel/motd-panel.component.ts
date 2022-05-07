@@ -25,7 +25,7 @@ export class MotdPanelComponent implements OnInit {
     }
 
     loadData(){
-        this.motdService.getAllMotds().subscribe(data => {
+        this.motdService.getAll().subscribe(data => {
             if("statusCode" in data){
                 this.motds = [];
             }else{
@@ -44,7 +44,7 @@ export class MotdPanelComponent implements OnInit {
     }
 
     deleteMotd(data : ApiMotd){
-        this.motdService.deleteMotd(data._id).subscribe(data => {
+        this.motdService.delete(data._id).subscribe(data => {
             if("statusCode" in data){
                 this.snackBar.open("Failed to delete MOTD", "OK");
             }else{

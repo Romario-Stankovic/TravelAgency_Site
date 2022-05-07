@@ -36,7 +36,7 @@ export class BookingDialogComponent {
         let formData = this.bookingForm.value;
         this.loading = true;
         let userId = this.userService.loggedInUser?._id;
-        this.bookingService.createBooking(userId != undefined ? userId : "", this.data.destinationId, formData.date, formData.days).subscribe(response => {
+        this.bookingService.create(userId != undefined ? userId : "", this.data.destinationId, formData.date, formData.days).subscribe(response => {
             this.loading = false;
             if ("statusCode" in response) {
                 this.snackBar.open("Failed to make a reservation", "OK");

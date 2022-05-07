@@ -10,22 +10,22 @@ export class FaqService {
     constructor(private http: HttpClient) {}
 
 
-    getAllFaq(){
+    getAll(){
         return this.http.get<ApiFaq[] | ApiResponse>(environment.apiUrl + "/faq/all");
     }
 
-    deleteFaq(id : string) {
+    delete(id : string) {
         return this.http.delete<ApiFaq | ApiResponse>(environment.apiUrl + "/faq/?id=" + id);
     }
 
-    createFaq(question: string, answer : string){
+    create(question: string, answer : string){
         return this.http.post<ApiFaq | ApiResponse>(environment.apiUrl + "/faq/", {
             question: question,
             answer: answer
         });
     }
 
-    updateFaq(id : string, question: string, answer : string){
+    update(id : string, question: string, answer : string){
         return this.http.put<ApiFaq | ApiResponse>(environment.apiUrl + "/faq/?id=" + id, {
             question: question,
             answer: answer

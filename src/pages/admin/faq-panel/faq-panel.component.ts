@@ -25,7 +25,7 @@ export class FaqPanelComponent implements OnInit {
     }
 
     loadData(){
-        this.faqService.getAllFaq().subscribe(data => {
+        this.faqService.getAll().subscribe(data => {
             if("statusCode" in data) {
                 this.faqs = []
             }else {
@@ -44,7 +44,7 @@ export class FaqPanelComponent implements OnInit {
     }
 
     delete(data : ApiFaq) {
-        this.faqService.deleteFaq(data._id).subscribe(() => {
+        this.faqService.delete(data._id).subscribe(() => {
             if("statusCode" in data) {
                 this.snackBar.open("Failed to delete MOTD", "OK");
             }else{

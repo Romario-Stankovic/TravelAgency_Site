@@ -15,9 +15,11 @@ import { MatInputModule } from "@angular/material/input";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FaqDialogComponent } from "./faq-panel/faq-dialog/faq-dialog.component";
 import { UserDialogComponent } from './user-panel/user-dialog/user-dialog.component';
+import { DestinationDialogComponent } from './destination-panel/destination-dialog/destination-dialog.component';
+import { MatChipsModule } from "@angular/material/chips";
 
 @NgModule({
-    declarations: [AdminComponent, UserPanelComponent, DestinationPanelComponent, FaqPanelComponent, MotdPanelComponent, MotdDialogComponent, FaqDialogComponent, UserDialogComponent],
+    declarations: [AdminComponent, UserPanelComponent, DestinationPanelComponent, FaqPanelComponent, MotdPanelComponent, MotdDialogComponent, FaqDialogComponent, UserDialogComponent, DestinationDialogComponent],
     imports: [
         CommonModule,
         MatSidenavModule,
@@ -28,7 +30,8 @@ import { UserDialogComponent } from './user-panel/user-dialog/user-dialog.compon
         MatDialogModule,
         MatInputModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatChipsModule
     ],
     exports: [AdminComponent]
 })

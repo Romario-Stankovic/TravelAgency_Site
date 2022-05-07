@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit{
         ){}
     ngOnInit(): void {
 
-        this.motdService.getRandomMotd().subscribe(data => {
+        this.motdService.getRandom().subscribe(data => {
             if("statusCode" in data){
                 this.motd = "Failed to load motd";
             }else{
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit{
             }
         });
 
-        this.faqService.getAllFaq().subscribe(data => {
+        this.faqService.getAll().subscribe(data => {
             
             if("statusCode" in data){
                 this.faq = [];

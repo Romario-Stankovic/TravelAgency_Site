@@ -1,8 +1,8 @@
 <h1>DESTINATIONS</h1>
 <hr>
-<button mat-flat-button color="primary" class="addButton">Create</button>
+<button mat-flat-button color="primary" class="addButton" (click)="showDestinationDialog(undefined)">Create</button>
 <mat-accordion>
-    <mat-expansion-panel *ngFor="let destination of data">
+    <mat-expansion-panel *ngFor="let destination of destinations">
         <mat-expansion-panel-header>
             {{destination.name}}
         </mat-expansion-panel-header>
@@ -11,8 +11,8 @@
         <b>Description: </b> {{destination.description}} <br>
         <!-- <b>Categories: </b> {{destination.categories}} <br> -->
         <mat-action-row>
-            <button mat-flat-button color="primary">Edit</button>
-            <button mat-flat-button color="warn">Delete</button>
+            <button mat-flat-button color="primary" (click)="showDestinationDialog(destination)">Edit</button>
+            <button mat-flat-button color="warn" (click)="delete(destination)">Delete</button>
         </mat-action-row>
     </mat-expansion-panel>
 </mat-accordion>

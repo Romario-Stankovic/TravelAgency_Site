@@ -30,7 +30,7 @@ export class MotdDialogComponent implements OnInit {
     }
 
     create(){
-        this.motdService.createMotd(this.motdForm.value.message).subscribe(data => {
+        this.motdService.create(this.motdForm.value.message).subscribe(data => {
             if("statusCode" in data) {
                 this.snackBar.open("Creation failed", "OK!");
             }else{
@@ -41,7 +41,7 @@ export class MotdDialogComponent implements OnInit {
     }
 
     update(){
-        this.motdService.updateMotd(this.data._id, this.motdForm.value.message).subscribe(data => {
+        this.motdService.update(this.data._id, this.motdForm.value.message).subscribe(data => {
             if("statusCode" in data) {
                 this.snackBar.open("Update failed", "OK!");
             }else{

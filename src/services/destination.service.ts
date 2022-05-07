@@ -19,8 +19,24 @@ export class DestinationService {
         });
     }
 
+    getAll(){
+        return this.http.get<ApiDestination[] | ApiResponse>(environment.apiUrl + "/destination/all");
+    }
+
     getByID(id: string) {
-        return this.http.get<ApiDestination | ApiResponse>(environment.apiUrl + "/destination?id=" + id);
+        return this.http.get<ApiDestination | ApiResponse>(environment.apiUrl + "/destination/?id=" + id);
+    }
+
+    create(data : FormData){
+        return this.http.post<ApiDestination | ApiResponse>(environment.apiUrl + "/destination/", data);
+    }
+
+    update(id : string, data : FormData){
+        return this.http.put<ApiDestination | ApiResponse>(environment.apiUrl + "/destination/?id="+id, data);
+    }
+
+    delete(id : string){
+        return this.http.delete<ApiDestination | ApiResponse>(environment.apiUrl + "/destination/?id=" + id);
     }
 
     getReviews(id: string){

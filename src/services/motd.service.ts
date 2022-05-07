@@ -9,27 +9,27 @@ export class MotdService {
 
     constructor(private http: HttpClient) {}
 
-    getRandomMotd(){
+    getRandom(){
         return this.http.get<ApiMotd | ApiResponse>(environment.apiUrl + "/motd/random");
     }
 
-    getAllMotds(){
+    getAll(){
         return this.http.get<ApiMotd[] | ApiResponse>(environment.apiUrl + "/motd/all");
     }
 
-    createMotd(message : string) {
+    create(message : string) {
         return this.http.post<ApiMotd | ApiResponse>(environment.apiUrl + "/motd/", {
             message: message
         });
     }
 
-    updateMotd(id : string, message : string) {
+    update(id : string, message : string) {
         return this.http.put<ApiMotd | ApiResponse>(environment.apiUrl + "/motd/?id=" + id, {
             message: message
         });
     }
 
-    deleteMotd(id: string){
+    delete(id: string){
         return this.http.delete<ApiMotd | ApiResponse>(environment.apiUrl + "/motd/?id=" + id);
     }
 }

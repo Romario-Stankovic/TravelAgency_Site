@@ -25,7 +25,7 @@ export class UserPanelComponent implements OnInit {
     }
 
     loadData(){
-        this.userService.getAllUsers().subscribe(data => {
+        this.userService.getAll().subscribe(data => {
             if("statusCode" in data){
                 this.users = [];
             }else {
